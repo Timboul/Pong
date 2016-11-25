@@ -18,7 +18,7 @@ namespace Pong
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        enum GameState { PLAY, PAUSE, QUIT, FIN, MENU };
+        enum GameState { PLAY, PAUSE, QUIT, MENU };
         GameState State;
 
         Menu.StartMenu mainMenu;
@@ -47,11 +47,11 @@ namespace Pong
         {
             graphics.PreferredBackBufferWidth = 470;
             graphics.PreferredBackBufferHeight = 300;
+            IsMouseVisible = true; // test only
             graphics.ApplyChanges();
 
-
             State = GameState.MENU;
-            mainMenu = new Menu.StartMenu();
+            mainMenu = new Menu.StartMenu(0,0 ,70,50);
 
             terrain = new Object.Terrain();
             balle = new Object.Balle(160, 100, 10, 10);
@@ -74,7 +74,7 @@ namespace Pong
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            mainMenu.LoadContentMenu(); // chargement texture menu 
+            mainMenu.LoadContentMenu(Content.Load<Texture2D>("Texture/btn_play"));  // chargement texture menu 
 
             Texture2D raquette = Content.Load<Texture2D>("Texture/raquette");
              
@@ -105,9 +105,6 @@ namespace Pong
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-           
-
-
             /*
              * Actions en fonction du gameState  
              */
@@ -117,9 +114,8 @@ namespace Pong
 
             if(State == GameState.MENU) {
 
-                if (mainMenu.UpdateMenu())
+                if (mainMenu.MouseEvent(Mouse.GetState()))
                     State = GameState.PLAY;
-
             }
 
             if (State == GameState.PLAY) {
@@ -139,8 +135,6 @@ namespace Pong
             if(State == GameState.QUIT)
                 this.Exit();
 
-            if(State == GameState.FIN){}
-   
             base.Update(gameTime);
         }
 
@@ -260,7 +254,7 @@ namespace Pong
         private void scoreMax()
         {
             if(joueur1.getScore() == 10 || joueur2.getScore() == 10)
-                State = GameState.FIN;     
+                State = GameState.MENU;     
         }
 
 

@@ -21,10 +21,13 @@ namespace Pong.Menu
         private Rectangle btn_option;
         private Rectangle btn_sound;
 
-        public StartMenu()
+        private MouseState old_state;
+
+
+        public StartMenu(int x, int y, int width, int height)
         {
             // Initialisation et instanciation de la position des rectangles 
-            btn_play = new Rectangle(50, 50, 200, 200);
+            btn_play = new Rectangle(x, y, width, height);
         }
 
         public void Draw(ref SpriteBatch sprite)
@@ -36,21 +39,38 @@ namespace Pong.Menu
             sprite.End();
         }
 
-        public void LoadContentMenu()
+        public void LoadContentMenu(Texture2D p_text)
         {
-            text_btn_play = Content.Load<Texture2D>("btn_play"); 
+            text_btn_play = p_text;  
         }
 
 
         public bool UpdateMenu()
         {
-            if (btn_play.Intersects(new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 5, 5)));
+            
+            if (btn_play.Intersects(new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 5, 5)) && Mouse.GetState().LeftButton == ButtonState.Pressed);
             return true;
 
             return false;
         }
-   
 
-    
+
+
+        public bool MouseEvent(MouseState mouseState)
+        {
+            Rectangle pos = new Rectangle(mouseState.X, mouseState.Y, 5, 5);
+
+            if (mouseState.LeftButton == ButtonState.Pressed)
+                Console.Beep();
+
+            if (mouseState.LeftButton == ButtonState.Pressed && old_state.LeftButton == ButtonState.Released && pos.Intersects(btn_play))
+                return true;
+
+            old_state = mouseState;
+     
+            return false;
+        }
+
+
     }
 }
