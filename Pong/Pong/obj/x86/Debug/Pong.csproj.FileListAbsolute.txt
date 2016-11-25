@@ -1,0 +1,58 @@
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\raquette.xnb
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\Pong.exe
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\Pong.pdb
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\MonoGame.Framework.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XInput.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\MonoGame.Framework.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XInput.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\obj\x86\Debug\Pong.exe
+c:\users\fez\documents\visual studio 2015\Projects\Pong\Pong\obj\x86\Debug\Pong.pdb
+C:\Users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\Balle.xnb
+C:\Users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\TerrainPong.xnb
+C:\Users\fez\documents\visual studio 2015\Projects\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\score.xnb
+C:\Users\fez\Desktop\Perso\Pong\Pong\obj\x86\Debug\Pong.exe
+C:\Users\fez\Desktop\Perso\Pong\Pong\obj\x86\Debug\Pong.pdb
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\Balle.xnb
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\raquette.xnb
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\score.xnb
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\TerrainPong.xnb
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\Pong.exe
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\Pong.pdb
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\fez\Desktop\Perso\Pong\Pong\obj\x86\Debug\Pong.csprojResolveAssemblyReference.cache
+C:\Users\fez\Desktop\Perso\Pong\Pong\bin\Windows\x86\Debug\Content\Texture\btn_play.xnb
