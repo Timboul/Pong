@@ -48,6 +48,7 @@ namespace Pong
             graphics.PreferredBackBufferWidth = 470;
             graphics.PreferredBackBufferHeight = 300;
             IsMouseVisible = true; // test only
+            
             graphics.ApplyChanges();
 
             State = GameState.MENU;
@@ -74,15 +75,9 @@ namespace Pong
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            mainMenu.LoadContentMenu(Content.Load<Texture2D>("Texture/btn_play"));  // chargement texture menu 
+            LoadMenu();
 
-            Texture2D raquette = Content.Load<Texture2D>("Texture/raquette");
-             
-            terrain.setTexture(Content.Load<Texture2D>("Texture/TerrainPong"));
-            balle.setTexture(Content.Load<Texture2D>("Texture/Balle"));
-            joueur1.setTexture(raquette);
-            joueur2.setTexture(raquette);
-            affichScore = Content.Load<SpriteFont>("Texture/score");
+            LoadGamePlay();
 
         }
 
@@ -108,14 +103,22 @@ namespace Pong
             /*
              * Actions en fonction du gameState  
              */
-   
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape)) State = GameState.QUIT;
+            Mouse.WindowHandle = Window.Handle;
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                State = GameState.QUIT;
 
 
             if(State == GameState.MENU) {
 
-                if (mainMenu.MouseEvent(Mouse.GetState()))
-                    State = GameState.PLAY;
+                //if (mainMenu.MouseEvent(Mouse.GetState()))
+                //    State = GameState.PLAY;
+
+               var stat = Mouse.GetState();
+                
+
+                System.Diagnostics.Debug.WriteLine(stat.X);
+                System.Diagnostics.Debug.WriteLine(Mouse.GetState().LeftButton);
+
             }
 
             if (State == GameState.PLAY) {
@@ -188,6 +191,29 @@ namespace Pong
             joueur2.move(Keyboard.GetState());
         }
         #endregion
+
+        #region LOADER
+
+        private void LoadGamePlay()
+        {
+            terrain.setTexture(Content.Load<Texture2D>("Texture/TerrainPong"));
+            balle.setTexture(Content.Load<Texture2D>("Texture/Balle"));
+
+            Texture2D raquette = Content.Load<Texture2D>("Texture/raquette");
+            joueur1.setTexture(raquette);
+            joueur2.setTexture(raquette);
+
+            affichScore = Content.Load<SpriteFont>("Texture/score");
+        }
+
+        private void LoadMenu()
+        {
+            mainMenu.LoadContentMenu(Content.Load<Texture2D>("Texture/btn_play"));  // chargement texture menu 
+        }
+
+        #endregion
+
+
 
 
         #region MENU

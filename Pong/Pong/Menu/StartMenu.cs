@@ -22,6 +22,7 @@ namespace Pong.Menu
         private Rectangle btn_sound;
 
         private MouseState old_state;
+        private MouseState current_state;
 
 
         public StartMenu(int x, int y, int width, int height)
@@ -47,26 +48,26 @@ namespace Pong.Menu
 
         public bool UpdateMenu()
         {
-            
-            if (btn_play.Intersects(new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 5, 5)) && Mouse.GetState().LeftButton == ButtonState.Pressed);
-            return true;
 
             return false;
         }
 
 
 
-        public bool MouseEvent(MouseState mouseState)
+        public bool MouseEvent(MouseState currentMouseState)
         {
-            Rectangle pos = new Rectangle(mouseState.X, mouseState.Y, 5, 5);
+            Point pos = new Point(currentMouseState.Position.X, currentMouseState.Position.Y);
 
-            if (mouseState.LeftButton == ButtonState.Pressed)
-                Console.Beep();
+            old_state = current_state;
 
-            if (mouseState.LeftButton == ButtonState.Pressed && old_state.LeftButton == ButtonState.Released && pos.Intersects(btn_play))
-                return true;
+            current_state = currentMouseState;
 
-            old_state = mouseState;
+            System.Diagnostics.Debug.WriteLine(pos);
+            System.Diagnostics.Debug.WriteLine(currentMouseState.LeftButton);
+
+            if (btn_play.Contains(pos))
+                if (currentMouseState.LeftButton == ButtonState.Pressed && old_state.LeftButton == ButtonState.Released)
+                    return true;
      
             return false;
         }
