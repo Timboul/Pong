@@ -32,15 +32,11 @@ namespace Pong.Menu.Bouton
             return false;
         }
 
-        public Pong.GameState GetAction()
-        { return action; }
+        public Pong.GameState GetAction(){ return action; }
 
-        public void Draw(ref SpriteBatch sp)
-        {
-            //sp.Begin();
-            sp.Draw(tex, rec, Color.White);
-            //sp.End();
-        }
+
+
+        public void Draw(ref SpriteBatch sp) { sp.Draw(tex, rec, Color.White); }
 
 
 

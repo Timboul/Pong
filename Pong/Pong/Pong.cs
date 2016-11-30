@@ -118,6 +118,7 @@ namespace Pong
 
             if (State == GameState.PLAY) {
 
+                // Gestion de la pause 
                 if (Keyboard.GetState().IsKeyDown(Keys.P)) State = GameState.PAUSE;
 
                 UpdatePlay();
@@ -224,6 +225,7 @@ namespace Pong
                 reinitialiserJeu();
                 return;
             }
+
 
             // Cas balle sort terrain coté J2
             if (balle.getRectangle().X > 470)
