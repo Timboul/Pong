@@ -11,48 +11,66 @@ using Microsoft.Xna.Framework;
 
 namespace Pong.Menu
 {
-    class StartMenu 
+    class StartMenu : Game
     {
         private Rectangle title;
 
-        private Bouton.Bouton btn_play;
-        private Bouton.Bouton btn_option;
-        private Bouton.Bouton btn_sound;
+        private Rectangle btn_play;
+        private Texture2D text_btn_play;
 
-        private List<Bouton.Bouton> les_Boutons; 
+        private Rectangle btn_option;
+        private Rectangle btn_sound;
 
-        public StartMenu(ContentManager content )
+        private MouseState old_state;
+        private MouseState current_state;
+
+
+        public StartMenu(int x, int y, int width, int height)
         {
-            les_Boutons = new List<Bouton.Bouton>();
-
-            btn_play = new Bouton.Bouton(200, 200, 50, 20, content.Load<Texture2D>("Texture/btn_play"), Pong.GameState.PLAY);
-
-            les_Boutons.Add(btn_play);
+            // Initialisation et instanciation de la position des rectangles 
+            btn_play = new Rectangle(x, y, width, height);
         }
 
         public void Draw(ref SpriteBatch sprite)
         {
             sprite.Begin();
 
-            foreach (Bouton.Bouton btn in les_Boutons)
-                btn.Draw(ref sprite);
+            sprite.Draw(text_btn_play, btn_play, Color.White); //TEST
 
             sprite.End();
         }
 
-        public Pong.GameState Action(MouseState state)
+        public void LoadContentMenu(Texture2D p_text)
         {
-            if(state.LeftButton == ButtonState.Pressed)
-            foreach (Bouton.Bouton btn in les_Boutons)
-            {
-                if (btn.Click(new Point(state.X, state.Y)))
-                    return btn.GetAction();
-            }
-
-            return Pong.GameState.MENU;
+            text_btn_play = p_text;  
         }
 
-   
+
+        public bool UpdateMenu()
+        {
+
+            return false;
+        }
+
+
+
+        public bool MouseEvent(MouseState currentMouseState)
+        {
+            Point pos = new Point(currentMouseState.Position.X, currentMouseState.Position.Y);
+
+            old_state = current_state;
+
+            current_state = currentMouseState;
+
+            System.Diagnostics.Debug.WriteLine(pos);
+            System.Diagnostics.Debug.WriteLine(currentMouseState.LeftButton);
+
+            if (btn_play.Contains(pos))
+                if (currentMouseState.LeftButton == ButtonState.Pressed && old_state.LeftButton == ButtonState.Released)
+                    return true;
+     
+            return false;
+        }
 
 
     }
