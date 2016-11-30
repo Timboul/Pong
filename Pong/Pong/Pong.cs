@@ -18,7 +18,7 @@ namespace Pong
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        enum GameState { PLAY, PAUSE, QUIT, MENU };
+        public enum GameState { PLAY, PAUSE, QUIT, MENU };
         GameState State;
 
         Menu.StartMenu mainMenu;
@@ -51,7 +51,7 @@ namespace Pong
             graphics.ApplyChanges();
 
             State = GameState.MENU;
-            mainMenu = new Menu.StartMenu(0,0 ,70,50);
+            mainMenu = new Menu.StartMenu(Content);
 
             terrain = new Object.Terrain();
             balle = new Object.Balle(160, 100, 10, 10);
@@ -74,8 +74,7 @@ namespace Pong
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            mainMenu.LoadContentMenu(Content.Load<Texture2D>("Texture/btn_play"));  // chargement texture menu 
-
+         
             Texture2D raquette = Content.Load<Texture2D>("Texture/raquette");
              
             terrain.setTexture(Content.Load<Texture2D>("Texture/TerrainPong"));
@@ -112,10 +111,9 @@ namespace Pong
             if (Keyboard.GetState().IsKeyDown(Keys.Escape)) State = GameState.QUIT;
 
 
-            if(State == GameState.MENU) {
-
-                if (mainMenu.MouseEvent(Mouse.GetState()))
-                    State = GameState.PLAY;
+            if(State == GameState.MENU)
+            {
+               State = mainMenu.Action(Mouse.GetState());             
             }
 
             if (State == GameState.PLAY) {

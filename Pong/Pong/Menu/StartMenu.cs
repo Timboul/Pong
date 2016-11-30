@@ -11,65 +11,48 @@ using Microsoft.Xna.Framework;
 
 namespace Pong.Menu
 {
-    class StartMenu : Game
+    class StartMenu 
     {
         private Rectangle title;
 
-        private Rectangle btn_play;
-        private Texture2D text_btn_play;
+        private Bouton.Bouton btn_play;
+        private Bouton.Bouton btn_option;
+        private Bouton.Bouton btn_sound;
 
-        private Rectangle btn_option;
-        private Rectangle btn_sound;
+        private List<Bouton.Bouton> les_Boutons; 
 
-        private MouseState old_state;
-
-
-        public StartMenu(int x, int y, int width, int height)
+        public StartMenu(ContentManager content )
         {
-            // Initialisation et instanciation de la position des rectangles 
-            btn_play = new Rectangle(x, y, width, height);
+            les_Boutons = new List<Bouton.Bouton>();
+
+            btn_play = new Bouton.Bouton(200, 200, 50, 20, content.Load<Texture2D>("Texture/btn_play"), Pong.GameState.PLAY);
+
+            les_Boutons.Add(btn_play);
         }
 
         public void Draw(ref SpriteBatch sprite)
         {
             sprite.Begin();
 
-            sprite.Draw(text_btn_play, btn_play, Color.White); //TEST
+            foreach (Bouton.Bouton btn in les_Boutons)
+                btn.Draw(ref sprite);
 
             sprite.End();
         }
 
-        public void LoadContentMenu(Texture2D p_text)
+        public Pong.GameState Action(MouseState state)
         {
-            text_btn_play = p_text;  
+            if(state.LeftButton == ButtonState.Pressed)
+            foreach (Bouton.Bouton btn in les_Boutons)
+            {
+                if (btn.Click(new Point(state.X, state.Y)))
+                    return btn.GetAction();
+            }
+
+            return Pong.GameState.MENU;
         }
 
-
-        public bool UpdateMenu()
-        {
-            
-            if (btn_play.Intersects(new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 5, 5)) && Mouse.GetState().LeftButton == ButtonState.Pressed);
-            return true;
-
-            return false;
-        }
-
-
-
-        public bool MouseEvent(MouseState mouseState)
-        {
-            Rectangle pos = new Rectangle(mouseState.X, mouseState.Y, 5, 5);
-
-            if (mouseState.LeftButton == ButtonState.Pressed)
-                Console.Beep();
-
-            if (mouseState.LeftButton == ButtonState.Pressed && old_state.LeftButton == ButtonState.Released && pos.Intersects(btn_play))
-                return true;
-
-            old_state = mouseState;
-     
-            return false;
-        }
+   
 
 
     }

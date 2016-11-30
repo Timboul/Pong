@@ -38,6 +38,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Menu\Bouton\Bouton.cs" />
     <Compile Include="Menu\StartMenu.cs" />
     <Compile Include="Object\Balle.cs" />
     <Compile Include="Object\GameObject.cs" />
